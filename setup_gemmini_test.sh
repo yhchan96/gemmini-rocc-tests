@@ -65,7 +65,7 @@ if [[ -n "$SWITCH_CONFIG" ]]; then
   fi
   
   echo "Building configuration in verilator..."
-  ( cd "$VERILATOR_DIR" && make CONFIG="$SWITCH_CONFIG" )
+  ( cd "$VERILATOR_DIR" && make clean && make CONFIG="$SWITCH_CONFIG" )
   
   # Step 2: Copy updated gemmini_params.h from rocc-tests to libgemmini
   PARAMS_SRC="$SCRIPT_DIR/include/gemmini_params.h"
